@@ -1,0 +1,22 @@
+@model IEnumerable<SaleItem>
+
+<h1>Inventarie</h1>
+
+<form method="get" asp-action="Index" asp-controller="Inventory">
+    <input type="text" name="search" placeholder="Search inventory..." />
+    <button type="submit">Search</button>
+</form>
+
+@if (!Model.Any())
+{
+    <p>No items available in the inventory.</p>
+}
+else
+{
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li>@item.Name - @item.Description</li>
+        }
+    </ul>
+}
