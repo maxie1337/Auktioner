@@ -11,6 +11,9 @@ var app = builder.Build();
 builder.Services.AddDbContext<AppDbContext>(options =>
 options.UseInMemoryDatabase("AuctionDatabase"));
 
+builder.Services.AddDefaultIdentity<IdentityUser>()
+.AddEntityFrameworkStores<AppDbContext>();
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
