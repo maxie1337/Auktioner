@@ -1,0 +1,15 @@
+@model SaleItem
+
+<h1>Create Sale Item</h1>
+<form asp-action="Create" method="post">
+    <label for="Name">Name:</label>
+    <input type="text" id="Name" name="Name" required />
+
+    <label for="Description">Description:</label>
+    <input type="text" id="Description" name="Description" required />
+
+    <label for="StartingPrice">Starting Price:</label>
+    <input type="number" id="StartingPrice" name="StartingPrice" step="0.01" required />
+
+    <button type="submit">Create</button>
+</form>
