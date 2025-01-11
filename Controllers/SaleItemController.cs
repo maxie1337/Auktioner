@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Auktioner.Models;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 
 [Authorize]
 public class SaleItemController : Controller

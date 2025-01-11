@@ -1,4 +1,7 @@
-@model SaleItem
+@model IEnumerable<SaleItem>
+@{
+    ViewData["Title"] = "Create Item";
+}
 
 <h1>Create Sale Item</h1>
 <form asp-action="Create" method="post">

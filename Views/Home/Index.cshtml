@@ -1,1 +1,37 @@
-﻿
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="container mt-5">
+    <div class="row text-center">
+        <div class="col-12">
+            <h1 class="display-4">Välkommen till Gammalt Glimmer AB</h1>
+            <p class="lead">Din plattform för att skapa och upptäcka fantastiska annonser!</p>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-md-6 text-center">
+            <h2>Skapa din egen annons</h2>
+            <p>Vill du sälja något? Det är enkelt att skapa en annons på vår plattform. Beskriv din produkt och sätt ett startpris för din auktion.</p>
+            <a href="@Url.Action("Create", "SaleItem")" class="btn btn-primary btn-lg">Skapa annons</a>
+        </div>
+
+        <div class="col-md-6 text-center">
+            <h2>Se befintliga annonser</h2>
+            <p>Utforska de annonser som redan finns på sidan. Bli inspirerad eller gör ditt bud på en auktion!</p>
+            <a href="@Url.Action("Index", "Inventory")" class="btn btn-secondary btn-lg">Se annonser</a>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-12 text-center">
+            <h3>Så här fungerar det:</h3>
+            <ul class="list-unstyled">
+                <li><strong>Skapa annons:</strong> Fyll i detaljer om din produkt, sätt ett startpris och publicera din annons för att börja auktionen.</li>
+                <li><strong>Se annonser:</strong> Utforska andra annonser och budge på de produkter som intresserar dig.</li>
+                <li><strong>Enkel betalning:</strong> När auktionen är över, kommer betalningen att hanteras enkelt och snabbt.</li>
+            </ul>
+        </div>
+    </div>
+</div>
