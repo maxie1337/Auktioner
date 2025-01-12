@@ -29,12 +29,14 @@
                 <li class="nav-item">
                     <a class="nav-link text-dark" asp-area="" asp-controller="Inventory" asp-action="Index">Inventarie</a>
                 </li>
-            </ul>
-            <ul class="navbar-nav ms-auto"> 
-               <li class="navbarbtn"> 
-                    <a class="btn btn-secondary btn-small" asp-area="" asp-controller="Account" asp-action="Login">Logga in</a>
+                <li class="nav-item">
+                    @if (User.Identity.IsAuthenticated) 
+                    {
+                         <a class="nav-link text-dark" asp-area="" asp-controller="SaleItem" asp-action="MyItems">Redigera Annons</a>
+                    }
                 </li>
             </ul>
+            @await Html.PartialAsync("_LoginPartial")
         </div>
     </div> 
 </nav>
