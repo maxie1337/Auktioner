@@ -1,0 +1,41 @@
+@model IEnumerable<SaleItem>
+
+<h1>Mina Försäljningsobjekt</h1>
+
+@if (!Model.Any())
+{
+    <p>Du har inga försäljningsobjekt.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Namn</th>
+                <th>Kategori</th>
+                <th>Beskrivning</th>
+                <th>Utgångspris</th>
+                <th>Årtionde</th>
+                <th>Åtgärder</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Name</td>
+                    <td>@item.Category</td>
+                    <td>@item.Description</td>
+                    <td>@item.StartingPrice.ToString("C")</td>
+                    <td>@item.Decade</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-primary">Redigera</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+<a asp-action="Create" class="btn btn-success">Lägg till nytt objekt</a>

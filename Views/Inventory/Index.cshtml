@@ -5,21 +5,33 @@
 
 <h1>Inventarie</h1>
 
-<form method="get" asp-action="Index" asp-controller="Inventory">
-    <input type="text" name="search" placeholder="Search inventory..." />
-    <button type="submit">Search</button>
-</form>
-
 @if (!Model.Any())
 {
-    <p>No items available in the inventory.</p>
+    <p>Det finns inga föremål i inventariet.</p>
 }
 else
 {
-    <ul>
-        @foreach (var item in Model)
-        {
-            <li>@item.Name - @item.Description</li>
-        }
-    </ul>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Namn</th>
+                <th>Kategori</th>
+                <th>Beskrivning</th>
+                <th>Utgångspris</th>
+                <th>Årtionde</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Name</td>
+                    <td>@item.Category</td>
+                    <td>@item.Description</td>
+                    <td>@item.StartingPrice.ToString("C")</td>
+                    <td>@item.Decade</td>
+                </tr>
+            }
+        </tbody>
+    </table>
 }

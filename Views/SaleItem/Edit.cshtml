@@ -1,0 +1,44 @@
+@model SaleItem
+
+@{
+    ViewData["Title"] = "Edit items";
+}
+
+<h1>Redigera Försäljningsobjekt</h1>
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Category"></label>
+        <input asp-for="Category" class="form-control" />
+        <span asp-validation-for="Category" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Description"></label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="StartingPrice"></label>
+        <input asp-for="StartingPrice" class="form-control" step="0.01" />
+        <span asp-validation-for="StartingPrice" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Decade"></label>
+        <input asp-for="Decade" class="form-control" />
+        <span asp-validation-for="Decade" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Spara</button>
+    <a asp-action="MyItems" class="btn btn-secondary">Tillbaka</a>
+</form>
